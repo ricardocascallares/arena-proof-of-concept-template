@@ -40,7 +40,7 @@ public class EditarNotaView extends MainWindow<EditarNotaViewModel> {
   
 
   public static void main(String[] args) {
-    new UnaView().startApplication();
+    new EditarNotaView().startApplication();
   }
 }
 
