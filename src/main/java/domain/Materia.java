@@ -1,22 +1,34 @@
 package domain;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.uqbar.commons.utils.Observable;
+
+@Observable
 public class Materia {
 	
-	private Collection<Evaluacion> evaluaciones;
-	
+	private List<Evaluacion> evaluaciones=new ArrayList<Evaluacion>();
 	private String nombre;
 	private String profesor;
-	private String año;
+	private String anio;
 	private String finalAprobado;
+	private String cursada;
 	
 
-	public Collection<Evaluacion> getEvaluaciones() {
+	public String getCursada() {
+		return cursada;
+	}
+
+	public void setCursada(String cursada) {
+		this.cursada = cursada;
+	}
+
+	public List<Evaluacion> getEvaluaciones() {
 		return evaluaciones;
 	}
 
-	public void setEvaluaciones(Collection<Evaluacion> evaluaciones) {
+	public void setEvaluaciones(List<Evaluacion> evaluaciones) {
 		this.evaluaciones = evaluaciones;
 	}
 
@@ -36,12 +48,12 @@ public class Materia {
 		this.profesor = profesor;
 	}
 
-	public String getAño() {
-		return año;
+	public String getAnio() {
+		return anio;
 	}
 
-	public void setAño(String año) {
-		this.año = año;
+	public void setAnio(String año) {
+		this.anio = año;
 	}
 
 	public String getFinalAprobado() {
@@ -51,6 +63,13 @@ public class Materia {
 	public void setFinalAprobado(String finalAprobado) {
 		this.finalAprobado = finalAprobado;
 	}
+
+	public void agregarEvaluacion(Evaluacion nuevaEvaluacion) {
+		getEvaluaciones().add(nuevaEvaluacion);		
+	}
 	
+	public void removerEvaluacion(Evaluacion nuevaEvaluacion) {
+		getEvaluaciones().remove(nuevaEvaluacion);		
+	}
 	
 }
